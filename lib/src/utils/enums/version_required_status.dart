@@ -1,0 +1,1 @@
+enum VersionRequiredStatus { optional, require }

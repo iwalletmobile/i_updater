@@ -1,0 +1,38 @@
+name: i_updater
+description: "A Flutter plugin for managing in-app updates seamlessly, ensuring users always have the latest version of your app with minimal hassle."
+version: 0.0.1
+homepage:
+topics:
+  - flutter
+  - flutter-plugin
+  - in-app-updates
+  - update-management
+  - android
+  - ios
+  - mobile-development
+  - dart
+  - plugin-development
+
+environment:
+  sdk: ">=2.15.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+  http: ^1.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: tr.com.iwallet.i_updater
+        pluginClass: IUpdaterPlugin
+      ios:
+        pluginClass: IUpdaterPlugin
