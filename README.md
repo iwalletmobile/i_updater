@@ -1,10 +1,26 @@
-# iUpdater
+# i_updater
 
 ## Update Plugin for Flutter
 
 ## Overview
 
 The Update Plugin for Flutter provides an easy way to prompt users to update your app to the latest version. This ensures that users always have access to the latest features, improvements, and security patches.
+
+## Table of contents
+
+- [Features](#features)
+
+- [Installation](#installation)
+
+- [Usage](#usage)
+
+- [Properties](#properties)
+
+- [Screenshots](#screenshots)
+
+- [Contributing](#contributing)
+
+- [License](#license)
 
 ## Features
 
@@ -19,12 +35,11 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  i_updater: ^1.0.0 
+  i_updater: <latest_version>
 ```
 Then, run flutter pub get to install the package.
 
-# Usage
-## Basic Usage
+## Usage
 
 Import the package:
 
@@ -58,6 +73,63 @@ class MyHomePage extends StatelessWidget {
   }
 }
 ```
+
+## Properties
+
+| Properties              | Required | Default                   | Description                                                                                                                                                                   |
+| ----------------------- | -------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key                     | false    |                           | Widget key.                                                                                                                                                                   |
+| child                   | true     |                           | Where you want to announce the new version (usually splash is preferred)                                                                                                                                              |
+| countryCode        | false     |  `en`     | It represents the language code. This is the statement that will appear in the endpoint when fetching store information. (e.g. 'en', 'tr'...).                                                                                           |
+| language                    | false     |       `LanguageCodes.en`   | Specifies the alert dialog language. Currently 11 languages are supported.                                                                                                                                |
+| versionRequiredStatus             | false    | `VersionRequiredStatus.optional` | Indicates whether the update is mandatory or not. |
+| showVersions          | false    |       `true`          | Determines whether version information is shown in the Dialog.                                                                                                     |
+| title             | false    |                           | Sets the update notification title.                                                                                                                                                    |
+| content              | false    |                    |  Determines the content of the update notification.                                                                                                                                          |
+| onCloseTap | false    |       `Navigator.of(context).pop()`    | Determines the shutdown function (Maybe later button).                                                                   |              
+
+
+## Screenshots
+
+#### iOS
+
+<p float="left">
+<table>
+    <tbody>
+            <td align="center" style="background-color: white">
+                <img width="175" src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/e79b6b32-cb8a-422b-8ba7-a758fc415f81"/></a>
+            </td>
+            <td align="center" style="background-color: white">
+               <img src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/61095f32-06b9-4b52-8ee6-8d3a3460c19a" width="175"/></a>
+            </td>
+              <td align="center" style="background-color: white">
+                <img src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/a4b911d7-ffa7-4e97-b7da-6ddc47814139" width="175"/></a>
+            </td>
+            <td align="center" style="background-color: white">
+                <img src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/90bfa53c-00c0-4557-aaf8-672509d1d6a4" width="175"/></a>
+            </td>
+    </tbody>
+</table>
+</p>
+
+#### Android
+
+<table>
+    <tbody>
+            <td align="center" style="background-color: white">
+                <img width="175" src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/1153a1fc-37f8-48ef-a2bd-0149d7421605"/></a>
+            </td>
+            <td align="center" style="background-color: white">
+               <img src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/2019889f-797e-45ff-8654-69027c4cbc1c" width="175"/></a>
+            </td>
+              <td align="center" style="background-color: white">
+                <img src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/28800a9b-95eb-46b4-b42b-4e1fb09211c1" width="175"/></a>
+            </td>
+            <td align="center" style="background-color: white">
+                <img src="https://github.com/iwalletmobilecase/i_updater/assets/105479937/14cc5bcb-4cc4-41a5-b3bf-46ddda8a21a2" width="175"/></a>
+            </td>
+    </tbody>
+</table>
 
 # Contributing
 Contributions are welcome! Please submit a pull request or open an issue to suggest improvements or report bugs.
