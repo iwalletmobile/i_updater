@@ -77,7 +77,8 @@ class AppUpdateDialog extends StatelessWidget {
         title: title ??
             Column(
               children: [
-                const Icon(Icons.info_outline_rounded, color: CupertinoColors.activeBlue, size: 30),
+                const Icon(Icons.info_outline_rounded,
+                    color: CupertinoColors.activeBlue, size: 30),
                 const SizedBox(height: 10),
                 Text(language.title, textAlign: TextAlign.center),
               ],
