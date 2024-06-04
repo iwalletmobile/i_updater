@@ -5,15 +5,11 @@ homepage: https://github.com/iwalletmobilecase/i_updater
 repository: https://github.com/iwalletmobilecase/i_updater
 documentation: https://github.com/iwalletmobilecase/i_updater
 topics:
-  - flutter
-  - flutter-plugin
-  - in-app-updates
+  - updater
+  - force-update
+  - mandatoriy-update
   - update-management
-  - android
-  - ios
-  - mobile-development
-  - dart
-  - plugin-development
+  - app-updater
 
 environment:
   sdk: ">=2.15.0 <4.0.0"
