@@ -1,12 +1,17 @@
 package tr.com.iwallet.i_updater
 
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
+import android.content.Intent
+import android.net.Uri
 import androidx.annotation.NonNull
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+
 
 /** IUpdaterPlugin */
 class IUpdaterPlugin: FlutterPlugin, MethodCallHandler {
