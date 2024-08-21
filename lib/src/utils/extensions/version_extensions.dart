@@ -3,5 +3,6 @@ extension RegExpExtension on RegExp {
 }
 
 extension StringExtension on String {
-  List<int> get fromStringToIntList => split('.').map((e) => int.tryParse(e) ?? 0).toList();
+  List<int> get fromStringToIntList =>
+      split('.').map((e) => int.tryParse(e) ?? 0).toList();
 }
