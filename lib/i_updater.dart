@@ -1,4 +1,4 @@
-library app_update_manager;
+library i_updater;
 
 export 'src/manager/updater_manager.dart';
 export 'src/manager/version_manager.dart';

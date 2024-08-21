@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Improve documentation and add CONTRIBUTING.md
+
 ## 0.0.3
 
 * Edit android imports

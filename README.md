@@ -35,7 +35,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  i_updater: <latest_version>
+  i_updater: ^0.0.4
 ```
 Then, run flutter pub get to install the package.
 
@@ -132,7 +132,8 @@ class MyHomePage extends StatelessWidget {
 </table>
 
 # Contributing
-Contributions are welcome! Please submit a pull request or open an issue to suggest improvements or report bugs.
+
+If you would like to contribute to the plugin (e.g. by improving the documentation, solving a bug, or adding a cool new feature), please carefully review our [contribution guide](./CONTRIBUTING.md) and send us your [pull request](https://github.com/iwalletmobile/i_updater/pulls).
 
 # License
 This project is licensed under the MIT License. See the LICENSE file for more details.
