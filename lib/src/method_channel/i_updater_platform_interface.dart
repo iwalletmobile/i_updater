@@ -23,15 +23,9 @@ abstract class IUpdaterPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getCurrentVersion() {
-    throw UnimplementedError('getCurrentVersion() has not been implemented.');
-  }
+  Future<String?> getCurrentVersion();
 
-  Future<String?> getAppId() {
-    throw UnimplementedError('getAppId() has not been implemented.');
-  }
+  Future<String?> getAppId();
 
-  Future<String?> openStore(String url) {
-    throw UnimplementedError('openStore() has not been implemented.');
-  }
+  Future<String?> openStore(String url);
 }

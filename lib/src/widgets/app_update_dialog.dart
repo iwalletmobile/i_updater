@@ -1,11 +1,11 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:i_updater/src/method_channel/i_updater_platform_interface.dart';
 import 'package:i_updater/src/utils/enums/language_codes.dart';
 import 'package:i_updater/src/utils/enums/version_required_status.dart';
 import 'package:i_updater/src/utils/extensions/language_extensions.dart';
 import 'package:i_updater/src/widgets/adaptive_button.dart';
 import 'package:i_updater/src/widgets/dialog_base.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 /// Show a dialog
 class AppUpdateDialog extends StatelessWidget {

@@ -10,14 +10,31 @@ class MethodChannelIUpdater extends IUpdaterPlatform {
   final methodChannel = const MethodChannel('i_updater');
 
   @override
-  Future<String?> getCurrentVersion() async =>
-      await methodChannel.invokeMethod<String>('getAppVersion');
+  Future<String?> getCurrentVersion() async {
+    try {
+      return await methodChannel.invokeMethod<String>('getAppVersion');
+    } catch (_) {
+      return null;
+    }
+  }
 
   @override
-  Future<String?> getAppId() async =>
-      await methodChannel.invokeMethod<String>('appId');
+  Future<String?> getAppId() async {
+    try {
+      return await methodChannel.invokeMethod<String>('appId');
+    } catch (_) {
+      return null;
+    }
+  }
 
   @override
-  Future<String?> openStore(String url) async =>
-      await methodChannel.invokeMethod<String>('openStore', {'url': url});
+  Future<String?> openStore(String url) async {
+    try {
+      return await methodChannel.invokeMethod<String>('openStore', {
+        'url': url,
+      });
+    } catch (_) {
+      return null;
+    }
+  }
 }
