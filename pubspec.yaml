@@ -1,9 +1,10 @@
 name: i_updater
 description: "A Flutter plugin for managing in-app updates seamlessly, ensuring users always have the latest version of your app with minimal hassle."
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/iwalletmobilecase/i_updater
 repository: https://github.com/iwalletmobilecase/i_updater
 documentation: https://github.com/iwalletmobilecase/i_updater
+issue_tracker: https://github.com/iwalletmobilecase/i_updater/issues
 topics:
   - updater
   - force-update

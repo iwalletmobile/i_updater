@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Improve general codes
+
 ## 0.0.4
 
 * Improve documentation and add CONTRIBUTING.md

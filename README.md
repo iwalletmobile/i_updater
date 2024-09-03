@@ -35,7 +35,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  i_updater: ^0.0.4
+  i_updater: ^0.0.5
 ```
 Then, run flutter pub get to install the package.
 

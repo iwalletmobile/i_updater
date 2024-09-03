@@ -12,7 +12,7 @@
 * If you haven't configured your machine with an SSH key that's known to GitHub, then
   follow [GitHub's directions](https://help.github.com/articles/generating-ssh-keys/)
   to generate an SSH key.
-* Clone your forked repo on your local development machine: `git clone git@github.com:<your_name_here>/i_updater.git`
+* Clone your forked repo on your local development machine: `git clone https://github.com/iwalletmobile/i_updater.git`
 
 ## Running the example project
 
