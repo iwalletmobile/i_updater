@@ -1,5 +1,4 @@
 import 'dart:convert' show jsonDecode;
-import 'dart:developer';
 import 'dart:io' show HttpStatus;
 import 'dart:math' as math;
 
@@ -61,7 +60,6 @@ class VersionManager extends InterfaceVersion with _VersionManagerMixin {
     );
     try {
       final response = await http.get(uri);
-      log(response.body.toString());
       return AppInfo(
         version: IUpdaterConstants.googlePlayVersionPattern
             .extractFirstMatch(response.body),
@@ -90,7 +88,6 @@ class VersionManager extends InterfaceVersion with _VersionManagerMixin {
               appId!,
             ),
       );
-      log(response.toString());
       return AppInfo(
         version: response?[IUpdaterConstants.results]
             .first[IUpdaterConstants.version],
