@@ -7,6 +7,7 @@ import 'package:i_updater/src/manager/interface_version.dart';
 import 'package:i_updater/src/manager/updater_manager.dart';
 import 'package:i_updater/src/model/app_info.dart';
 import 'package:i_updater/src/utils/constants/i_updater_constants.dart';
+import 'package:i_updater/src/utils/extensions/store_url_extensions.dart';
 import 'package:i_updater/src/utils/extensions/version_extensions.dart';
 
 class VersionManager extends InterfaceVersion with _VersionManagerMixin {
@@ -75,24 +76,32 @@ class VersionManager extends InterfaceVersion with _VersionManagerMixin {
   /// Returns an AppInfo object containing the version and store URL if successful, otherwise null.
   @override
   Future<AppInfo?> getIOSInfo() async {
-    final String? appId = await UpdaterManager.getAppId();
     try {
-      final Map<String, dynamic>? response = await fetch(
-        IUpdaterConstants.iOSDetailsPath
-            .replaceAll(
-              IUpdaterConstants.language,
-              countryCode,
-            )
-            .replaceAll(
-              IUpdaterConstants.id,
-              appId!,
-            ),
-      );
+      final String? appId = await UpdaterManager.getAppId();
+      if (appId == null) return null;
+
+      final url = appId.iOSUrl(countryCode);
+
+      final Map<String, dynamic>? data = await fetch(url);
+      if (data == null || data[IUpdaterConstants.results].isEmpty) return null;
+
+      final appStoreId = (data[IUpdaterConstants.results][0]
+              [IUpdaterConstants.trackId] as int?)
+          ?.toString();
+      if (appStoreId == null) return null;
+
+      final appDetailsUrl = appStoreId.appDetailsUrl(language);
+      final Map<String, dynamic>? appDetails = await fetch(appDetailsUrl);
+
+      if (appDetails == null || appDetails[IUpdaterConstants.results].isEmpty) {
+        return null;
+      }
+
       return AppInfo(
-        version: response?[IUpdaterConstants.results]
-            .first[IUpdaterConstants.version],
-        storeUrl: response?[IUpdaterConstants.results]
-            .first[IUpdaterConstants.trackViewUrl],
+        version: appDetails[IUpdaterConstants.results][0]
+            [IUpdaterConstants.version],
+        storeUrl: appDetails[IUpdaterConstants.results][0]
+            [IUpdaterConstants.trackViewUrl],
       );
     } catch (_) {
       return null;
@@ -103,14 +112,14 @@ class VersionManager extends InterfaceVersion with _VersionManagerMixin {
 mixin _VersionManagerMixin {
   /// Fetches JSON data from the specified URL.
   ///
-  /// * [url] - The URL to fetch the data from.
+  /// * [uri] - The URI to fetch the data from.
   ///
   /// Returns a Map containing the JSON data if successful, otherwise null.
   Future<Map<String, dynamic>?> fetch(
-    String url,
+    Uri uri,
   ) async {
     try {
-      final http.Response response = await http.get(Uri.parse(url));
+      final http.Response response = await http.get(uri);
       return response.statusCode == HttpStatus.ok
           ? jsonDecode(response.body)
           : null;
