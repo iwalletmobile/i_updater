@@ -90,7 +90,7 @@ class VersionManager extends InterfaceVersion with _VersionManagerMixin {
           ?.toString();
       if (appStoreId == null) return null;
 
-      final appDetailsUrl = appStoreId.appDetailsUrl(language);
+      final appDetailsUrl = appStoreId.appDetailsUrl(countryCode);
       final Map<String, dynamic>? appDetails = await fetch(appDetailsUrl);
 
       if (appDetails == null || appDetails[IUpdaterConstants.results].isEmpty) {

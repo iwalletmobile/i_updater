@@ -25,11 +25,11 @@ extension StoreUrlExtensions on String {
   /// * [language] - The language code (e.g., 'en', 'tr') used in the URL to fetch localized app details.
   ///
   /// Returns a [Uri] that can be used to fetch detailed app information from the App Store.
-  Uri appDetailsUrl(String language) {
+  Uri appDetailsUrl(String countryCode) {
     final url = IUpdaterConstants.appStoreDetailsUrl
         .replaceAll(
           IUpdaterConstants.language,
-          language, // Replace the placeholder for the language code.
+          countryCode, // Replace the placeholder for the language code.
         )
         .replaceAll(
           IUpdaterConstants.id,
